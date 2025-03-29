@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;0,900;1,600&display=swap');
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Young Serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header, footer {
+    padding: 1rem;
+}
+
+header {
+    background-color: #3ab397;
+    font-size: 3rem;
+}
+
+
+.whatWeOffer { 
+    grid-area: whatWeOffer;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1em;
+    margin: 1em 5%;
+}
+
+.container-header {
+    display: block;
+    flex: 0 0 auto;
+    margin: 1em 5%;
+}
+
+
+
+
+article {
+    border: solid 1px #247e9d;
+    text-align: center;
+    align-items: center;/* vertically center items */
+    justify-content: center; /* horizontally center items */
+}
+
+article:nth-of-type(3) {
+    grid-column: 1 / -1;
+}
+
+
+
+
+@media screen and (min-width:800px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "whatWeOffer"
+            "consultation"
+            "footer";
+    }
+
+    /* .consultation {
+        grid-template-areas: 
+            "consultation-image consultation-text";
+    } */
+
+
+    /* .consultation {
+        grid-template-columns: 1fr 1fr; 
+    } 
+    .consultation-image img {
+        width: 100%; 
+        height: auto; 
+    }
+    
+    .consultation-text {
+        padding: 1em; 
+    } */
+    
+    
+    .whatWeOffer {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* background-color: #3ab397; */
+    }
+    
+    article:nth-of-type(3) {
+        grid-column: auto;
+    }
+
+}
+
+    .consultation {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1.5fr));
+        grid-gap: 1em;
+        /* margin: 1em 5%; */
+    }
+
+    .consultation-image img {
+        border: solid 1px #0e7e1d;
+
+        width: 400px; 
+        height: auto; 
+
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .consultation-text {
+        border: solid 1px #0e7e1d;
+        display: block;
+        padding: 1em; 
+    }
+
+   /* .consultation {
+    background-color: #3ab397;
+    display: grid;
+
+    grid-gap: 1em; 
+    align-items: center; 
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;   
+    grid-template-areas: 
+        "consultation-text"
+        "consultation-image"; 
+    } */
+
+
+.container {
+    display: grid;
+    grid-template-areas: 
+        "box1"
+        "box2"
+        "box3";
+        background-color: #45c4ff;
+}
+
+.item-title {
+    display: block;
+    font-size: 1.5rem;
+    flex: 0 0 auto;
+    margin: 10px 10px;
+    min-height: 60px;
+}
+
+.item-paragraph {
+    font-size: 1rem;
+    text-align: left;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+p.item-paragraph {
+    padding: 0px 10px 10px 10px;
+}
+
+
+footer {
+    background-color: #247e9d;
+    grid-area: footer;
+}
+
+
+
+
+
+.whyUs {
+    --grid-gutter: calc(var(--sqs-mobile-site-gutter, 6vw) - 11.0px);
+    --cell-max-width: calc( ( var(--sqs-site-max-width, 1500px) - (11.0px * (8 - 1)) ) / 8 );
+  
+    display: grid;
+    position: relative;
+    grid-area: 1/1/-1/-1;
+    grid-template-rows: repeat(22,minmax(24px, auto));
+    grid-template-columns:
+      minmax(var(--grid-gutter), 1fr)
+      repeat(8, minmax(0, var(--cell-max-width)))
+      minmax(var(--grid-gutter), 1fr);
+    row-gap: 11.0px;
+    column-gap: 11.0px;
+  }
+
+  @media (min-width: 768px) {
+    .background-width--inset .whyUs {
+      --inset-padding: calc(var(--sqs-site-gutter) * 2);
+    }
+  
+    .whyUs {
+      --grid-gutter: calc(var(--sqs-site-gutter, 4vw) - 11.0px);
+      --cell-max-width: calc( ( var(--sqs-site-max-width, 1500px) - (11.0px * (24 - 1)) ) / 24 );
+      --inset-padding: 0vw;
+  
+      --row-height-scaling-factor: 0.0215;
+      --container-width: min(var(--sqs-site-max-width, 1500px), calc(100vw - var(--sqs-site-gutter, 4vw) * 2 - var(--inset-padding) ));
+  
+      grid-template-rows: repeat(21,minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+      grid-template-columns:
+        minmax(var(--grid-gutter), 1fr)
+        repeat(24, minmax(0, var(--cell-max-width)))
+        minmax(var(--grid-gutter), 1fr);
+    }
+  }  
+
+
+  @supports (--test-custom-property: true) {
+    body {
+        --sqs-site-gutter:4vw;
+        --sqs-mobile-site-gutter: 6vw;
+        --sqs-site-max-width: 1400px;
+        --sqs-focus-outline-width: 2px;
+        --sqs-focus-outline-style: solid;
+        --sqs-focus-outline-offset-default: 4px;
+        --sqs-focus-outline-offset-zero: 0;
+        --sqs-focus-outline-offset-flush: -2px;
+        --sqs-focus-outline-offset-inset: -4px
+    }
+}

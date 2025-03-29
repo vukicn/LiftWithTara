@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Column Grid</title>
+    <link rel="stylesheet" href="tara.css">
+</head>
+
+<body>
+    <div>
+        <header class="grid">
+            <h1>Welcome to Lift With Tara</h1>
+            <nav>
+                <a href="/tara.html">Home</a>
+                <a href="/aboutTara.html">About</a>
+                <!-- <a href="">Contact</a> -->
+            </nav>
+        </header>
+        <main class="grid">
+            <!-- Contact Form -->
+            <div class="form" id="contact">
+                <h3>Ready to workout?</h3>
+                <p class="formIntro">Let's get in touch. If you'd like more information about any of my fitness
+                    sessions, please reach out and I will contact you promptly.</p>
+
+                <!-- Form  -->
+                <form action="#" method="post" id="contactForm" class="contactForm">
+                    <div>
+                        <label for="fullName">Your Name:</label>
+                        <input type="text" name="fullName" id="fullName" required>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <input type="tel" name="phone" id="phone" maxlength="12" placeholder="111-222-3333" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+
+                    <div class="radioBtns">
+                        <p>Preferred method of contact:</p>
+                        <label for="contactEmail">
+                            <input type="radio" name="contact" id="contactEmail" value="email">
+                            <span></span>
+                            Email
+                        </label>
+
+                        <label for="contactTel">
+                            <input type="radio" name="contact" id="contactTel" value="phone">
+                            <span></span>
+                            Phone
+                        </label>
+
+                        <label for="contactText">
+                            <input type="radio" name="contact" id="contactText" value="text">
+                            <span></span>
+                            Text
+                        </label>
+                    </div>
+
+                    <div>
+                        <label for="msg">Your Message / Question:</label>
+                        <textarea name="msg" id="msg"></textarea>
+                    </div>
+
+                    <!-- <div class="checks">
+            <input type="checkbox" name="newsletter" id="newsletter" checked>
+            <span></span>
+            <label for="newsletter">Sign up for our newsletter!</label>
+          </div> -->
+
+                    <button type="submit" value="Send Message" form="contactForm"><i class="fas fa-fish"></i> Send
+                        Request </button>
+                </form>
+            </div>
+            <div class="welcome">
+                <h2>Welcome</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, cumque molestiae culpa nisi
+                    voluptatibus laudantium mollitia obcaecati omnis in, ea adipisci, deleniti praesentium? Similique
+                    aspernatur amet dolor illum, ea tempore animi laborum. Temporibus explicabo, omnis molestiae cum eos
+                    quidem officia.</p>
+            </div>
+            <img src="https://dl.dropboxusercontent.com/scl/fi/73auprhevza2ugylcfaop/TaraWorkshopFeb2025.jpg?rlkey=9okskbctpphgfir41o29mdefi&st=xygxmsge&dl=0"
+                alt="Consultation Image">
+        </main>
+    </div>
+</body>
+
+</html>
