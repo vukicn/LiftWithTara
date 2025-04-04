@@ -85,22 +85,57 @@
     <section id="contactTara">
         <h3>Get in Touch</h3>
         <p class="leading"></p>
-        <form id="contactForm" action="https://formsubmit.co/9b01b354356f1583df7053032726c6b5" method="POST">
+        <form id="contactForm" action="https://formsubmit.co/1d14556553b863c2e4637865c96189d3" method="POST">
             <input type="text" name="_honey" style="display:none">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_subject" value="New Inquiry!">
-            <input type="hidden" name="_next" value="http://127.0.0.1:5501/MobileFirstVersion/thankyou.html">
+            <input type="hidden" name="_next" value="http://www.liftwithtara.com//thankyou.html">
             <div>
                 <label for="fullName">Your Name:</label>
                 <input type="text" name="Name" id="fullName" required>
             </div>
             <div>
                 <label for="phone">Phone:</label>
-                <input type="tel" name="Phone" id="phone" maxlength="12" placeholder="+1(111)-222-3333" required>
+                <input type="tel" name="Phone" id="phone" maxlength="14" placeholder="(123)456-4789" required>
+                <small id="phoneError" style="color: red; display: none;">Please enter a valid phone number.</small>
+                <script>
+                    const phoneInput = document.getElementById('phone');
+                    const phoneError = document.getElementById('phoneError');
+
+                    phoneInput.addEventListener('input', () => {
+                        let value = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+                        if (value.length > 10) value = value.slice(0, 10); // Limit to 10 digits
+
+                        if (value.length > 6) {
+                            phoneInput.value = `(${value.slice(0, 3)})${value.slice(3, 6)}-${value.slice(6)}`;
+                        } else if (value.length > 3) {
+                            phoneInput.value = `(${value.slice(0, 3)})${value.slice(3)}`;
+                        } else if (value.length > 0) {
+                            phoneInput.value = `(${value}`;
+                        } else {
+                            phoneInput.value = '';
+                        }
+                    });
+
+                    phoneInput.addEventListener('blur', () => {
+                        const isValid = /^\(\d{3}\)\d{3}-\d{4}$/.test(phoneInput.value);
+                        phoneError.style.display = isValid ? 'none' : 'block';
+                    });
+                </script>
             </div>
             <div>
                 <label for="email">Email:</label>
                 <input type="email" name="Email" id="email" required>
+                <small id="emailError" style="color: red; display: none;">Please enter a valid email address.</small>
+                <script>
+                    const emailInput = document.getElementById('email');
+                    const emailError = document.getElementById('emailError');
+
+                    emailInput.addEventListener('blur', () => {
+                        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+                        emailError.style.display = isValid ? 'none' : 'block';
+                    });
+                </script>
             </div>
             <div>
                 <label for="msg">Your Message / Question:</label>
