@@ -108,13 +108,12 @@
 }
 
 .welcome-text-mobile{
-    grid-column: 6/8;
-    grid-row: 1;
     max-width: 600px;
     padding-top: 40px;
-    margin: 15px 0px;
+    margin: 15px auto;
     text-align: center;
-    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    min-height: 100vh; 
+    /* Ensure the body takes up the full viewport height */
     
 }
 .welcome-img{
